@@ -2,23 +2,20 @@ import React, { Component } from "react";
 import CardNota from "./CardNota";
 
 class ListaDeNotas extends Component {
-
     render() {
         return (
             <ul>
-                <li>
-                    <CardNota />
-                </li>
+                {Array.of("Trabalho", "Prova", "Atividade").map((categoria) => {
 
-                <li>
-                    <CardNota />
-                </li>
-
-                <li>
-                    <CardNota />
-                </li>
+                    return (
+                        <li>
+                            <div>{categoria}</div>
+                            <CardNota />
+                        </li>
+                    );
+                })}
             </ul>
-        )
+        );
     }
 }
 
